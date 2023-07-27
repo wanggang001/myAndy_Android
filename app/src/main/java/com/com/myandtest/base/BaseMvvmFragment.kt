@@ -8,8 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import java.lang.reflect.ParameterizedType
 
 /**
- * @author mingyan.su
- * @date   2023/2/27 12:31
  * @desc   DataBinding和ViewModel基类
  */
 abstract class BaseMvvmFragment<DB : ViewDataBinding, VM : ViewModel> : BaseDataBindFragment<DB>() {

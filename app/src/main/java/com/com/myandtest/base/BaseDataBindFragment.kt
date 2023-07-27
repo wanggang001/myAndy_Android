@@ -9,8 +9,6 @@ import com.com.myandtest.framework.ext.saveAsUnChecked
 import java.lang.reflect.ParameterizedType
 
 /**
- * @author mingyan.su
- * @date   2023/2/26 21:41
  * @desc   dataBinding Fragment 基类
  */
 abstract class BaseDataBindFragment<DB : ViewBinding> : BaseFragment() {

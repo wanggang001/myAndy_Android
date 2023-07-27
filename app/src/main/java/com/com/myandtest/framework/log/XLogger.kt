@@ -2,8 +2,6 @@ package com.com.myandtest.framework.log
 
 import android.app.Application
 import android.util.Log
-//import com.tencent.mars.xlog.Log
-//import com.tencent.mars.xlog.Xlog
 
 /**
  * XLog的管理工具类

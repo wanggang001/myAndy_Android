@@ -7,8 +7,6 @@ import com.com.myandtest.framework.ext.saveAsUnChecked
 import java.lang.reflect.ParameterizedType
 
 /**
- * @author mingyan.su
- * @date   2023/2/26 11:48
  * @desc   dataBinding Activity基类
  */
 abstract class BaseDataBindActivity<DB : ViewBinding> : BaseActivity() {

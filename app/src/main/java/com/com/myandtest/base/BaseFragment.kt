@@ -12,8 +12,6 @@ import com.com.myandtest.framework.toast.TipsToast
 import com.com.myandtest.framework.utils.LoadingUtils
 
 /**
- * @author mingyan.su
- * @date   2023/2/20 12:34
  * @desc Fragment基类
  */
 abstract class BaseFragment : Fragment() {

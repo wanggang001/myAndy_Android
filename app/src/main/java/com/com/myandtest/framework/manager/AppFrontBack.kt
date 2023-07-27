@@ -5,8 +5,6 @@ import android.app.Application
 import android.os.Bundle
 
 /**
- * Author mingyan.su
- * Time   2023/2/21 14:20
  * Desc   App前后台切换监听
  */
 object AppFrontBack {

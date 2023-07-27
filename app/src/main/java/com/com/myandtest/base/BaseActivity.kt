@@ -9,8 +9,6 @@ import com.com.myandtest.framework.utils.LoadingUtils
 
 
 /**
- * Author mingyan.su
- * Time   2023/2/20 12:33
  * Desc   Activity基类
  */
 abstract class BaseActivity : AppCompatActivity() {

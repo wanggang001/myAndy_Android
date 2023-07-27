@@ -7,8 +7,6 @@ import androidx.viewbinding.ViewBinding
 import java.lang.reflect.ParameterizedType
 
 /**
- * @author mingyan.su
- * @date   2023/2/27 12:18
  * @desc   DataBinding+ViewModel基类
  */
 abstract class BaseMvvmActivity<DB : ViewBinding, VM : ViewModel> : BaseDataBindActivity<DB>() {

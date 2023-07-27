@@ -3,8 +3,6 @@ package com.com.myandtest.framework.helper
 import android.app.Application
 
 /**
- * @author mingyan.su
- * @date   2023/3/2 16:10
  * @desc   提供应用环境
  */
 object AndyAppHelper {

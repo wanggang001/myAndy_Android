@@ -1,1 +1,12 @@
 # myAndy_Android
+#### framework：
+1. Base基类相关
+2. Ext拓展函数
+3. Loading加载框
+4. LogUtil日志打印工具类
+5. Manager相关管理类
+6. TipsToast吐司工具类
+7. Utils相关工具类
+#### stater：
+1. 异步任务，延迟任务启动器
+2. 任务优先级，线程池，依赖关系，是否需要等待
