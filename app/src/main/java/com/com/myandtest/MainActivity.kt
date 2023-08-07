@@ -1,12 +1,12 @@
 package com.com.myandtest
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import com.com.myandtest.base.BaseDataBindActivity
+import com.com.myandtest.databinding.ActivityMainBinding
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseDataBindActivity<ActivityMainBinding>() {
+    override fun initView(savedInstanceState: Bundle?) {
     }
+
 }
 
