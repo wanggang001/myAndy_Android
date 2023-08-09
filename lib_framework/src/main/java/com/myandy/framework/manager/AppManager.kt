@@ -1,4 +1,4 @@
-package com.com.myandtest.framework.manager
+package com.myandy.framework.manager
 
 import android.app.Application
 import android.content.Context
@@ -9,8 +9,7 @@ import android.provider.Settings
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.WindowManager
-import com.com.myandtest.framework.log.LogUtil
-import com.com.myandtest.framework.utils.DeviceInfoUtils
+import com.myandy.framework.utils.DeviceInfoUtils
 import kotlin.math.max
 import kotlin.math.min
 
@@ -222,7 +221,7 @@ object AppManager {
                 return ""
             }
         } catch (e: Exception) {
-            LogUtil.e("VersionInfo", e)
+            com.myandy.framework.log.LogUtil.e("VersionInfo", e)
         }
         return versionName
     }
@@ -239,7 +238,7 @@ object AppManager {
                 .getPackageInfo(packageName, 0)
             appVersionCode = packageInfo.versionCode.toLong()
         } catch (e: PackageManager.NameNotFoundException) {
-            LogUtil.e("getAppVersionCode-${e.message}")
+            com.myandy.framework.log.LogUtil.e("getAppVersionCode-${e.message}")
         }
         return appVersionCode
     }

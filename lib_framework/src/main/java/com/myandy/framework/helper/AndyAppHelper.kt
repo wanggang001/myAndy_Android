@@ -1,4 +1,4 @@
-package com.com.myandtest.framework.helper
+package com.myandy.framework.helper
 
 import android.app.Application
 

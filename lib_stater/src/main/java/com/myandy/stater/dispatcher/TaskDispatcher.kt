@@ -1,16 +1,16 @@
-package com.myandy.framework.stater.dispatcher
+package com.myandy.stater.dispatcher
 
 import android.app.Application
 import android.os.Looper
 import android.util.Log
 import androidx.annotation.UiThread
-import com.myandy.framework.stater.TaskStat
-import com.myandy.framework.stater.sort.TaskSortUtil
-import com.myandy.framework.stater.task.DispatchRunnable
-import com.myandy.framework.stater.task.Task
-import com.myandy.framework.stater.task.TaskCallBack
-import com.myandy.framework.stater.utils.DispatcherLog
-import com.myandy.framework.stater.utils.StaterUtils
+import com.myandy.stater.TaskStat
+import com.myandy.stater.sort.TaskSortUtil
+import com.myandy.stater.task.DispatchRunnable
+import com.myandy.stater.task.Task
+import com.myandy.stater.task.TaskCallBack
+import com.myandy.stater.utils.DispatcherLog
+import com.myandy.stater.utils.StaterUtils
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Future
 import java.util.concurrent.TimeUnit

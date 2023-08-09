@@ -1,8 +1,8 @@
-package com.myandy.framework.stater.sort
+package com.myandy.stater.sort
 
 import androidx.collection.ArraySet
-import com.myandy.framework.stater.task.Task
-import com.myandy.framework.stater.utils.DispatcherLog
+import com.myandy.stater.task.Task
+import com.myandy.stater.utils.DispatcherLog
 
 /**
  * 任务排序

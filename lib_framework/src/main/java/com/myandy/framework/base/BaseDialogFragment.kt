@@ -1,4 +1,4 @@
-package com.com.myandtest.base
+package com.myandy.framework.base
 
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatDialogFragment
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.com.myandtest.framework.log.LogUtil
+import com.myandy.framework.log.LogUtil
 import java.lang.Exception
 
 /**
@@ -48,7 +48,7 @@ class BaseDialogFragment : AppCompatDialogFragment() {
                 try {
                     super.show(manager, tag)
                 } catch (e: Exception) {
-                    LogUtil.e(e)
+                    com.myandy.framework.log.LogUtil.e(e)
                 }
             }
         }
@@ -62,7 +62,7 @@ class BaseDialogFragment : AppCompatDialogFragment() {
             try {
                 return super.show(transaction, tag)
             } catch (e: Exception) {
-                LogUtil.e(e)
+                com.myandy.framework.log.LogUtil.e(e)
             }
         }
         return -1
@@ -143,7 +143,7 @@ class BaseDialogFragment : AppCompatDialogFragment() {
                 // 解决 Dialog 设置了而 DialogFragment 没有生效的问题
                 dialogFragment?.isCancelable = isCancelable
             } catch (e: Exception) {
-                LogUtil.e("@BaseDialog，弹窗show失败$e")
+                com.myandy.framework.log.LogUtil.e("@BaseDialog，弹窗show失败$e")
             }
             return dialog
         }

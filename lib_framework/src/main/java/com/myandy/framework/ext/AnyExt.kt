@@ -1,4 +1,4 @@
-package com.com.myandtest.framework.ext
+package com.myandy.framework.ext
 
 
 inline fun <reified T> Any.saveAs() : T{

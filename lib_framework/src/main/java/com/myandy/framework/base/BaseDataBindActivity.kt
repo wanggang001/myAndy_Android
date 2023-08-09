@@ -1,9 +1,9 @@
-package com.com.myandtest.base
+package com.myandy.framework.base
 
 import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
-import com.com.myandtest.framework.ext.saveAs
-import com.com.myandtest.framework.ext.saveAsUnChecked
+import com.myandy.framework.ext.saveAs
+import com.myandy.framework.ext.saveAsUnChecked
 import java.lang.reflect.ParameterizedType
 
 /**

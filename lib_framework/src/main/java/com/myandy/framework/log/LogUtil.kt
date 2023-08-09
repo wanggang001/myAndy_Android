@@ -1,4 +1,4 @@
-package com.com.myandtest.framework.log
+package com.myandy.framework.log
 
 import android.app.Application
 import android.content.Context
@@ -6,7 +6,7 @@ import android.os.Build
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.WindowManager
-import com.com.myandtest.framework.utils.DeviceInfoUtils
+import com.myandy.framework.utils.DeviceInfoUtils
 
 /**
  *  API is the same to {@link android.util.Log}

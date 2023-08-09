@@ -1,10 +1,9 @@
-package com.myandy.framework.stater.task
+package com.myandy.stater.task
 
 import android.content.Context
 import android.os.Process
-import com.myandy.framework.stater.dispatcher.TaskDispatcher
-import com.myandy.framework.stater.dispatcher.TaskDispatcher.Companion.context
-import com.myandy.framework.stater.utils.DispatcherExecutor
+import com.myandy.stater.dispatcher.TaskDispatcher.Companion.context
+import com.myandy.stater.utils.DispatcherExecutor
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.ExecutorService
 
@@ -15,7 +14,7 @@ abstract class Task : ITask {
     protected var mContext: Context? = context
 
     // 当前进程是否是主进程
-    protected var mIsMainProcess: Boolean = TaskDispatcher.isMainProcess
+    protected var mIsMainProcess: Boolean = com.myandy.stater.dispatcher.TaskDispatcher.isMainProcess
 
     // 是否正在等待
     @Volatile

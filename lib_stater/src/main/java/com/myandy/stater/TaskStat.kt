@@ -1,6 +1,6 @@
-package com.myandy.framework.stater
+package com.myandy.stater
 
-import com.myandy.framework.stater.utils.DispatcherLog.i
+import com.myandy.stater.utils.DispatcherLog.i
 import java.util.concurrent.atomic.AtomicInteger
 
 /**

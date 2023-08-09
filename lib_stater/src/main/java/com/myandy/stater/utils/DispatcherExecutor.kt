@@ -1,4 +1,4 @@
-package com.myandy.framework.stater.utils
+package com.myandy.stater.utils
 
 import java.util.concurrent.*
 import java.util.concurrent.atomic.AtomicInteger

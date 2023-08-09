@@ -1,6 +1,6 @@
 @file:JvmName("TipToast")
 
-package com.com.myandtest.framework.toast
+package com.myandy.framework.toast
 
 import android.app.Application
 import android.os.Handler
@@ -11,8 +11,8 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import com.com.myandtest.R
-import com.com.myandtest.databinding.WidgetTipsToastBinding
+import com.myandy.framework.R
+import com.myandy.framework.databinding.WidgetTipsToastBinding
 
 object TipsToast {
 

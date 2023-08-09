@@ -1,4 +1,4 @@
-package com.com.myandtest.base
+package com.myandy.framework.base
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap

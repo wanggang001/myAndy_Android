@@ -1,24 +1,23 @@
-package com.myandy.framework.stater.task
+package com.myandy.stater.task
 
 import android.os.Looper
 import android.os.Process
 import androidx.core.os.TraceCompat
-import com.myandy.framework.stater.TaskStat
-import com.myandy.framework.stater.dispatcher.TaskDispatcher
-import com.myandy.framework.stater.utils.DispatcherLog
+import com.myandy.stater.TaskStat
+import com.myandy.stater.utils.DispatcherLog
 
 /**
  * 任务真正执行的地方
  */
 class DispatchRunnable : Runnable {
     private var mTask: Task
-    private var mTaskDispatcher: TaskDispatcher? = null
+    private var mTaskDispatcher: com.myandy.stater.dispatcher.TaskDispatcher? = null
 
     constructor(task: Task) {
         mTask = task
     }
 
-    constructor(task: Task, dispatcher: TaskDispatcher?) {
+    constructor(task: Task, dispatcher: com.myandy.stater.dispatcher.TaskDispatcher?) {
         mTask = task
         mTaskDispatcher = dispatcher
     }

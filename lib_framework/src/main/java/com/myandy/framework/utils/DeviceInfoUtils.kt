@@ -1,4 +1,4 @@
-package com.com.myandtest.framework.utils
+package com.myandy.framework.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,7 +7,6 @@ import android.net.wifi.WifiManager
 import android.os.Build
 import android.provider.Settings
 import android.telephony.TelephonyManager
-import com.com.myandtest.framework.log.LogUtil
 import java.io.FileInputStream
 import java.net.NetworkInterface
 
@@ -75,7 +74,7 @@ object DeviceInfoUtils {
         if (androidId.isNotEmpty()) {
             return
         }
-        LogUtil.d("init device androidId")
+        com.myandy.framework.log.LogUtil.d("init device androidId")
         val tmpAndroidId = Settings.Secure.getString(
             appContext.contentResolver,
             Settings.Secure.ANDROID_ID
@@ -93,7 +92,7 @@ object DeviceInfoUtils {
             return
         }
         try {
-            LogUtil.d("init device mac, wifiMac and ssid")
+            com.myandy.framework.log.LogUtil.d("init device mac, wifiMac and ssid")
             val wm = appContext.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
             initMacAddress(wm)
             if (!wm.connectionInfo.bssid.isNullOrEmpty()) {
@@ -103,7 +102,7 @@ object DeviceInfoUtils {
                 wifiSSID = wm.connectionInfo.ssid
             }
         } catch (e: Exception) {
-            LogUtil.d("init mac failure", throwable = e)
+            com.myandy.framework.log.LogUtil.d("init mac failure", throwable = e)
         }
     }
 
@@ -141,7 +140,7 @@ object DeviceInfoUtils {
                 }
             }
         } catch (e: Exception) {
-            LogUtil.d("read mac failure", throwable = e)
+            com.myandy.framework.log.LogUtil.d("read mac failure", throwable = e)
         }
     }
 
@@ -162,7 +161,7 @@ object DeviceInfoUtils {
             return
         }
         try {
-            LogUtil.d("init device imei and imsi")
+            com.myandy.framework.log.LogUtil.d("init device imei and imsi")
             val tm = appContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
             var tmpImei = ""
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -179,7 +178,7 @@ object DeviceInfoUtils {
                 imsi = tmpImsi.lowercase()
             }
         } catch (e: Exception) {
-            LogUtil.d(message = "initImei exception, msg=${e.message}")
+            com.myandy.framework.log.LogUtil.d(message = "initImei exception, msg=${e.message}")
         }
     }
 
@@ -212,12 +211,12 @@ object DeviceInfoUtils {
                 res = String(buffer, Charsets.UTF_8)
             }
         } catch (e: Exception) {
-            LogUtil.d("read file exception", throwable = e)
+            com.myandy.framework.log.LogUtil.d("read file exception", throwable = e)
         } finally {
             try {
                 fin?.close()
             } catch (e: Exception) {
-                LogUtil.d("close FileInputStream failure")
+                com.myandy.framework.log.LogUtil.d("close FileInputStream failure")
             }
         }
         return res

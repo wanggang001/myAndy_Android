@@ -1,4 +1,4 @@
-package com.myandy.framework.stater.utils
+package com.myandy.stater.utils
 
 import android.app.ActivityManager
 import android.content.Context

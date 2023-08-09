@@ -1,11 +1,10 @@
-package com.com.myandtest.base
+package com.myandy.framework.base
 
 import android.os.Bundle
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
-import com.com.myandtest.R
-import com.com.myandtest.framework.toast.TipsToast
-import com.com.myandtest.framework.utils.LoadingUtils
+import com.myandy.framework.R
+import com.myandy.framework.utils.LoadingUtils
 
 
 /**
@@ -85,7 +84,7 @@ abstract class BaseActivity : AppCompatActivity() {
      * @param msg Toast内容
      */
     fun showToast(msg: String) {
-        TipsToast.showTips(msg)
+        com.myandy.framework.toast.TipsToast.showTips(msg)
     }
 
     /**
@@ -93,7 +92,7 @@ abstract class BaseActivity : AppCompatActivity() {
      * @param resId 字符串id
      */
     fun showToast(@StringRes resId: Int) {
-        TipsToast.showTips(resId)
+        com.myandy.framework.toast.TipsToast.showTips(resId)
     }
 
     override fun onDestroy() {

@@ -5,17 +5,17 @@ import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import androidx.multidex.MultiDex
-import com.com.myandtest.framework.log.LogUtil
-import com.com.myandtest.framework.manager.ActivityManager
-import com.com.myandtest.framework.manager.AppFrontBack
-import com.com.myandtest.framework.manager.AppFrontBackListener
-import com.com.myandtest.framework.stater.dispatcher.TaskDispatcher
-import com.com.myandtest.framework.stater.task.InitAppManagerTask
-import com.com.myandtest.framework.stater.task.InitArouterTask
-import com.com.myandtest.framework.stater.task.InitMmkvTask
-import com.com.myandtest.framework.stater.task.InitRefreshLayoutTask
-import com.com.myandtest.framework.stater.task.InitSumHelperTask
-import com.com.myandtest.framework.toast.TipsToast
+import com.com.myandtest.task.InitAppManagerTask
+import com.com.myandtest.task.InitArouterTask
+import com.com.myandtest.task.InitMmkvTask
+import com.com.myandtest.task.InitRefreshLayoutTask
+import com.com.myandtest.task.InitSumHelperTask
+import com.myandy.framework.log.LogUtil
+import com.myandy.framework.manager.ActivityManager
+import com.myandy.framework.manager.AppFrontBack
+import com.myandy.framework.manager.AppFrontBackListener
+import com.myandy.stater.dispatcher.TaskDispatcher
+import com.myandy.framework.toast.TipsToast
 
 class BaseApplication : Application() {
     override fun attachBaseContext(base: Context?) {
@@ -52,7 +52,8 @@ class BaseApplication : Application() {
      * 注册APP前后台切换监听
      */
     private fun appFrontBackRegister() {
-        AppFrontBack.register(this, object : AppFrontBackListener {
+        AppFrontBack.register(this, object :
+            AppFrontBackListener {
             override fun onBack(activity: Activity?) {
                 LogUtil.d("onBack")
             }

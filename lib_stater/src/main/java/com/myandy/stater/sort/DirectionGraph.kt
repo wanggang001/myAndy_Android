@@ -1,4 +1,4 @@
-package com.myandy.framework.stater.sort
+package com.myandy.stater.sort
 
 import java.util.LinkedList
 import java.util.Queue

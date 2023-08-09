@@ -1,4 +1,4 @@
-package com.com.myandtest.framework.loading
+package com.myandy.framework.loading
 
 import android.app.Dialog
 import android.content.Context
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.Window
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
-import com.com.myandtest.R
-import com.com.myandtest.databinding.DialogLoadingBinding
+import com.myandy.framework.R
+import com.myandy.framework.databinding.DialogLoadingBinding
 
 /**
  * 通用加载中弹窗

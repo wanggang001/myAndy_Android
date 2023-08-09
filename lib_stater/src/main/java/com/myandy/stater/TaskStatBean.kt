@@ -1,4 +1,4 @@
-package com.myandy.framework.stater
+package com.myandy.stater
 
 internal class TaskStatBean {
     var situation: String? = null

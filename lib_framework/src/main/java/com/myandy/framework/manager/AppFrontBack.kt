@@ -1,4 +1,4 @@
-package com.com.myandtest.framework.manager
+package com.myandy.framework.manager
 
 import android.app.Activity
 import android.app.Application

@@ -1,4 +1,4 @@
-package com.com.myandtest.base
+package com.myandy.framework.base
 
 import android.content.Context
 import android.content.DialogInterface
@@ -23,8 +23,8 @@ import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatDialog
-import com.com.myandtest.R
-import com.com.myandtest.framework.log.LogUtil.e
+import com.myandy.framework.R
+import com.myandy.framework.log.LogUtil.e
 
 /**
  * BaseDialog

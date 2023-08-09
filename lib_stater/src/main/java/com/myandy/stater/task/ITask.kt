@@ -1,4 +1,4 @@
-package com.myandy.framework.stater.task
+package com.myandy.stater.task
 
 import android.os.Process
 import androidx.annotation.IntRange

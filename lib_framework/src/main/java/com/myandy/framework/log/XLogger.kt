@@ -1,4 +1,4 @@
-package com.com.myandtest.framework.log
+package com.myandy.framework.log
 
 import android.app.Application
 import android.util.Log

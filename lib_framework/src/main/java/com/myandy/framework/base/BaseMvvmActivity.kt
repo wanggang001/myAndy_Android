@@ -1,4 +1,4 @@
-package com.com.myandtest.base
+package com.myandy.framework.base
 
 import android.os.Bundle
 import androidx.lifecycle.ViewModel

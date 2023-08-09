@@ -1,8 +1,18 @@
-package com.myandy.framework.stater.task
+package com.com.myandtest.task
 
 import android.app.Application
-import com.myandy.framework.stater.utils.DispatcherExecutor
+import androidx.multidex.BuildConfig
+import com.alibaba.android.arouter.launcher.ARouter
+import com.myandy.framework.helper.AndyAppHelper
+import com.myandy.framework.log.LogUtil
+import com.myandy.framework.manager.AppManager
+import com.myandy.stater.task.Task
+import com.myandy.stater.utils.DispatcherExecutor
+import com.scwang.smart.refresh.footer.ClassicsFooter
+import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
+import com.tencent.mmkv.MMKV
+import com.tencent.mmkv.MMKVLogLevel
 import java.util.concurrent.ExecutorService
 
 /**
@@ -19,7 +29,7 @@ class InitSumHelperTask(val application: Application) : Task() {
     }
 
     override fun run() {
-        com.myandy.framework.helper.AndyAppHelper.init(application, BuildConfig.DEBUG)
+        AndyAppHelper.init(application, BuildConfig.DEBUG)
     }
 }
 
@@ -47,7 +57,7 @@ class InitMmkvTask() : Task() {
 
     //执行任务初始化
     override fun run() {
-        val rootDir: String = MMKV.initialize(com.myandy.framework.helper.AndyAppHelper.getApplication())
+        val rootDir: String = MMKV.initialize(AndyAppHelper.getApplication())
         MMKV.setLogLevel(
             if (BuildConfig.DEBUG) {
                 MMKVLogLevel.LevelDebug
@@ -55,7 +65,7 @@ class InitMmkvTask() : Task() {
                 MMKVLogLevel.LevelError
             }
         )
-        com.myandy.framework.log.LogUtil.d("mmkv root: $rootDir", tag = "MMKV")
+        LogUtil.d("mmkv root: $rootDir", tag = "MMKV")
     }
 }
 
@@ -76,7 +86,7 @@ class InitAppManagerTask() : Task() {
     }
 
     override fun run() {
-        com.myandy.framework.manager.AppManager.init(com.myandy.framework.helper.AndyAppHelper.getApplication())
+        AppManager.init(AndyAppHelper.getApplication())
     }
 }
 
@@ -129,7 +139,7 @@ class InitArouterTask() : Task() {
             // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
             ARouter.openDebug()
         }
-        ARouter.init(com.myandy.framework.helper.AndyAppHelper.getApplication())
+        ARouter.init(AndyAppHelper.getApplication())
     }
 }
 
