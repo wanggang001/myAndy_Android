@@ -1,4 +1,4 @@
-package com.sum.main.navigator
+package com.myandy.main.navigator
 
 import android.os.Bundle
 import android.view.LayoutInflater

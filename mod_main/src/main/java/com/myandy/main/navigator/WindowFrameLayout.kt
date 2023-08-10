@@ -1,4 +1,4 @@
-package com.sum.main.navigator
+package com.myandy.main.navigator
 
 import android.content.Context
 import android.util.AttributeSet

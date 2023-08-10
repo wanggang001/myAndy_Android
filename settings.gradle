@@ -18,3 +18,5 @@ rootProject.name = "MyAndTest"
 include ':app'
 include ':lib_framework'
 include ':lib_stater'
+include ':mod_main'
+include ':lib_common'

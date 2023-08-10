@@ -1,8 +1,6 @@
-package com.sum.common.constant
+package com.myandy.common.constant
 
 /**
- * @author mingyan.su
- * @date   2023/3/5 09:03
  * @desc   常量管理
  */
 

@@ -1,8 +1,6 @@
-package com.sum.common.constant
+package com.myandy.common.constant
 
 /**
- * @author mingyan.su
- * @date   2023/3/23 18:35
  * @desc   路由路径
  * 命名规则：/开头并且必须大于两级，/模块/分类/具体名称
  * 比如: /模块名称/组件[activity]/组件名称

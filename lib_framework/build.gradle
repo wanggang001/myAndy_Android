@@ -35,12 +35,12 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api rootProject.depsLibs.coreKtx
-    api rootProject.depsLibs.appcompat
-    api rootProject.depsLibs.material
-    api rootProject.depsLibs.gson
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.depsLibs.coreKtx
+    implementation rootProject.depsLibs.appcompat
+    implementation rootProject.depsLibs.material
+    implementation rootProject.depsLibs.gson
 
-    api rootProject.depsLibs.refreshLayout
+    implementation rootProject.depsLibs.refreshLayout
 //    api rootProject.depsLibs.tbssdk
 }

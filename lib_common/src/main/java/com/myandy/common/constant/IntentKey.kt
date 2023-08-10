@@ -1,8 +1,6 @@
-package com.sum.common.constant
+package com.myandy.common.constant
 
 /**
- * @author mingyan.su
- * @date   2023/3/13 17:37
  * @desc   IntentKey
  */
 
