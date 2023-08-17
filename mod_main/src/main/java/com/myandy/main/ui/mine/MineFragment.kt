@@ -1,60 +1,100 @@
 package com.myandy.main.ui.mine
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.alibaba.android.arouter.launcher.ARouter
+import com.myandy.common.constant.USER_ACTIVITY_SETTING
+import com.myandy.framework.base.BaseMvvmFragment
+import com.myandy.framework.decoration.NormalItemDecoration
+import com.myandy.framework.ext.gone
+import com.myandy.framework.ext.onClick
+import com.myandy.framework.ext.visible
+import com.myandy.framework.utils.dpToPx
+import com.myandy.framework.utils.getStringFromResource
 import com.myandy.main.R
+import com.myandy.main.databinding.FragmentMineBinding
+import com.myandy.main.databinding.FragmentMineHeadBinding
+import com.myandy.main.ui.mine.viewmodel.MineViewModel
+import com.myandy.main.ui.system.adapter.ArticleAdapter
+import com.scwang.smart.refresh.layout.api.RefreshLayout
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
+import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class MineFragment : BaseMvvmFragment<FragmentMineBinding, MineViewModel>(), OnRefreshListener,
+    OnLoadMoreListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MineFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class MineFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var mPage = 0
+    private lateinit var mHeadBinding: FragmentMineHeadBinding
+    private lateinit var mAdapter: ArticleAdapter
+    override fun initView(view: View, savedInstanceState: Bundle?) {
+        initRecyclerView()
+        initHeadView()
+        initListener()
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private fun initRecyclerView() {
+        mBinding?.refreshLayout?.apply {
+            autoRefresh()
+            setEnableRefresh(true)
+            setEnableLoadMore(true)
+            setOnRefreshListener(this@MineFragment)
+            setOnLoadMoreListener(this@MineFragment)
+            autoRefresh()
+        }
+        mAdapter = ArticleAdapter()
+        val dp12 = dpToPx(12)
+        mBinding?.recyclerView?.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            addItemDecoration(NormalItemDecoration().apply {
+                setBounds(left = dp12, top = dp12, right = dp12, bottom = dp12)
+                setLastBottom(true)
+                setFirstHeadMargin(true)
+            })
+            adapter = mAdapter
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mine, container, false)
+    private fun initHeadView() {
+        mHeadBinding = FragmentMineHeadBinding.inflate(LayoutInflater.from(requireContext()))
+        mHeadBinding?.tvName?.text = getStringFromResource(R.string.mine_not_login)
+        mAdapter.addHeadView(mHeadBinding.root)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MineFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MineFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onRefresh(refreshLayout: RefreshLayout) {
+        mPage = 0
+        getRecommendList()
+    }
+
+    override fun onLoadMore(refreshLayout: RefreshLayout) {
+        mPage++
+        getRecommendList()
+    }
+
+    /**
+     * 获取推荐列表数据
+     */
+    private fun getRecommendList() {
+        mViewModel.getRecommendList(count = mPage).observe(this) {
+            if (mPage == 0) {
+                mAdapter.setData(it)
+                if (it.isNullOrEmpty()) {
+                    mHeadBinding.tvRecommendTitle.gone()
+                } else {
+                    mHeadBinding.tvRecommendTitle.visible()
                 }
+                mBinding?.refreshLayout?.finishRefresh()
+            } else {
+                mAdapter.addAll(it)
+                mBinding?.refreshLayout?.finishLoadMore()
             }
+        }
+    }
+
+    private fun initListener() {
+        mHeadBinding?.apply {
+            ivSetting.onClick { ARouter.getInstance().build(USER_ACTIVITY_SETTING).navigation() }
+        }
     }
 }

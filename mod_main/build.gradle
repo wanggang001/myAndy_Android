@@ -57,21 +57,22 @@ dependencies {
     androidTestCompileOnly rootProject.depsLibs.extJunit
     androidTestCompileOnly rootProject.depsLibs.espressoCore
 
-    compileOnly  rootProject.depsLibs.gson
-    compileOnly  rootProject.depsLibs.flexbox
-    compileOnly  rootProject.depsLibs.mmkv
+    compileOnly rootProject.depsLibs.gson
+    compileOnly rootProject.depsLibs.flexbox
+    compileOnly rootProject.depsLibs.mmkv
 
-    compileOnly  rootProject.depsLibs.refreshLayout
-    compileOnly  rootProject.depsLibs.refreshHeader
-    compileOnly  rootProject.depsLibs.refreshFooter
+    compileOnly rootProject.depsLibs.refreshLayout
+    compileOnly rootProject.depsLibs.refreshHeader
+    compileOnly rootProject.depsLibs.refreshFooter
 
-    compileOnly  rootProject.depsLibs.aroutreApi
+    compileOnly rootProject.depsLibs.aroutreApi
     kapt rootProject.depsLibs.arouterCompiler
 
-    compileOnly  rootProject.depsLibs.rxPermission
-    compileOnly  rootProject.depsLibs.rxjava
-    compileOnly  rootProject.depsLibs.rxandroid
+    compileOnly rootProject.depsLibs.rxPermission
+    compileOnly rootProject.depsLibs.rxjava
+    compileOnly rootProject.depsLibs.rxandroid
 
-    compileOnly  project(path: ':lib_framework')
-    compileOnly  project(path: ':lib_common')
+    compileOnly project(path: ':lib_framework')
+    compileOnly project(path: ':lib_common')
+    implementation project(path: ':lib_network')
 }
