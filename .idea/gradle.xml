@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/lib_network" />
             <option value="$PROJECT_DIR$/lib_stater" />
             <option value="$PROJECT_DIR$/mod_main" />
+            <option value="$PROJECT_DIR$/mod_user" />
           </set>
         </option>
       </GradleProjectSettings>

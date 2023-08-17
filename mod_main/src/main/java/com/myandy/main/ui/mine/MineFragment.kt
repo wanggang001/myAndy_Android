@@ -94,7 +94,9 @@ class MineFragment : BaseMvvmFragment<FragmentMineBinding, MineViewModel>(), OnR
 
     private fun initListener() {
         mHeadBinding?.apply {
-            ivSetting.onClick { ARouter.getInstance().build(USER_ACTIVITY_SETTING).navigation() }
+            ivSetting.onClick {
+                ARouter.getInstance().build(USER_ACTIVITY_SETTING).navigation()
+            }
         }
     }
 }

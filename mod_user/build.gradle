@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'com.myandy.main'
+    namespace 'com.myandy.user'
     compileSdk rootProject.android.compileSdk
 
     defaultConfig {
@@ -50,15 +50,11 @@ dependencies {
     implementation rootProject.depsLibs.constraintlayout
     compileOnly rootProject.depsLibs.liveDataKtx
     compileOnly rootProject.depsLibs.viewModelKtx
-    compileOnly rootProject.depsLibs.navigationFragment
-    compileOnly rootProject.depsLibs.navigationUI
 
     testCompileOnly rootProject.depsLibs.junit
     androidTestCompileOnly rootProject.depsLibs.extJunit
     androidTestCompileOnly rootProject.depsLibs.espressoCore
 
-    compileOnly rootProject.depsLibs.gson
-    compileOnly rootProject.depsLibs.flexbox
     compileOnly rootProject.depsLibs.mmkv
 
     compileOnly rootProject.depsLibs.refreshLayout
