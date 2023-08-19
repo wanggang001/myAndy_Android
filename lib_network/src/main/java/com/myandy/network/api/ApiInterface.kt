@@ -1,6 +1,7 @@
 package com.myandy.network.api
 
 import com.myandy.common.model.ArticleList
+import com.myandy.common.model.SystemList
 import com.myandy.network.response.BaseResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -52,12 +53,12 @@ interface ApiInterface {
 //     */
 //    @GET("/navi/json")
 //    suspend fun getCategoryData(): BaseResponse<MutableList<CategoryItem>>?
-//
-//    /**
-//     * 获取体系列表
-//     */
-//    @GET("/tree/json")
-//    suspend fun getSystemList(): BaseResponse<MutableList<SystemList>>?
+
+    /**
+     * 获取体系列表
+     */
+    @GET("/tree/json")
+    suspend fun getSystemList(): BaseResponse<MutableList<SystemList>>?
 
     /**
      * 项目二级列表

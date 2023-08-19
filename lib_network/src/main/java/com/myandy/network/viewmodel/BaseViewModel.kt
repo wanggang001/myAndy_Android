@@ -71,7 +71,7 @@ open class BaseViewModel : ViewModel() {
      * @param errorCall 错误回调
      * @param responseBlock 请求函数
      */
-    private suspend fun <T> safeApiCallWithResult(
+    suspend fun <T> safeApiCallWithResult(
         errorCall: IApiErrorCallback?,
         responseBlock: suspend () -> BaseResponse<T>?
     ): T? {
