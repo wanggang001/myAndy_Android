@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.myandy.common.model.SystemSecondList
 import com.myandy.main.databinding.LayoutSystemSecondItemBinding
-import com.sum.framework.adapter.BaseBindViewHolder
-import com.sum.framework.adapter.BaseRecyclerViewAdapter
+import com.myandy.framework.adapter.BaseBindViewHolder
+import com.myandy.framework.adapter.BaseRecyclerViewAdapter
 
 /**
  * @desc   体系adapter

@@ -8,8 +8,8 @@ import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
 import com.myandy.common.model.SystemList
 import com.myandy.main.databinding.LayoutSystemItemBinding
-import com.sum.framework.adapter.BaseBindViewHolder
-import com.sum.framework.adapter.BaseRecyclerViewAdapter
+import com.myandy.framework.adapter.BaseBindViewHolder
+import com.myandy.framework.adapter.BaseRecyclerViewAdapter
 
 class SystemAdapter : BaseRecyclerViewAdapter<SystemList, LayoutSystemItemBinding>() {
     override fun getViewBinding(

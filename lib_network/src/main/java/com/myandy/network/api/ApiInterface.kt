@@ -1,6 +1,7 @@
 package com.myandy.network.api
 
 import com.myandy.common.model.ArticleList
+import com.myandy.common.model.CategoryItem
 import com.myandy.common.model.SystemList
 import com.myandy.network.response.BaseResponse
 import retrofit2.http.Field
@@ -47,12 +48,12 @@ interface ApiInterface {
 //        @Path("page") page: Int,
 //        @Query("cid") cid: Int
 //    ): BaseResponse<ProjectSubList>?
-//
-//    /**
-//     * 分类列表
-//     */
-//    @GET("/navi/json")
-//    suspend fun getCategoryData(): BaseResponse<MutableList<CategoryItem>>?
+
+    /**
+     * 分类列表
+     */
+    @GET("/navi/json")
+    suspend fun getCategoryData(): BaseResponse<MutableList<CategoryItem>>?
 
     /**
      * 获取体系列表

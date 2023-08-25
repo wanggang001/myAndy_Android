@@ -1,4 +1,4 @@
-package com.sum.framework.adapter
+package com.myandy.framework.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

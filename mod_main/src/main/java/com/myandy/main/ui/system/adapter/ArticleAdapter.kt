@@ -11,8 +11,8 @@ import com.myandy.framework.ext.onClick
 import com.myandy.framework.ext.visible
 import com.myandy.framework.utils.getStringFromResource
 import com.myandy.main.databinding.LayoutArticleItemBinding
-import com.sum.framework.adapter.BaseBindViewHolder
-import com.sum.framework.adapter.BaseRecyclerViewAdapter
+import com.myandy.framework.adapter.BaseBindViewHolder
+import com.myandy.framework.adapter.BaseRecyclerViewAdapter
 import java.text.SimpleDateFormat
 import java.util.Locale
 
