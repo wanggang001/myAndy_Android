@@ -11,8 +11,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/lib_banner" />
             <option value="$PROJECT_DIR$/lib_common" />
             <option value="$PROJECT_DIR$/lib_framework" />
+            <option value="$PROJECT_DIR$/lib_glide" />
             <option value="$PROJECT_DIR$/lib_network" />
             <option value="$PROJECT_DIR$/lib_stater" />
             <option value="$PROJECT_DIR$/mod_main" />

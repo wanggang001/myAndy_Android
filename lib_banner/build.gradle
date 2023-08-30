@@ -1,12 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-parcelize'
-    id 'kotlin-kapt'
 }
 
 android {
-    namespace 'com.myandy.common'
+    namespace 'com.myandy.banner'
     compileSdk rootProject.android.compileSdk
 
     defaultConfig {
@@ -15,12 +13,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-        //ARouter
-        kapt {
-            arguments {
-                arg("AROUTER_MODULE_NAME", project.getName())
-            }
-        }
     }
 
     buildTypes {
@@ -36,26 +28,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        dataBinding = true
-        viewBinding = true
-    }
 }
 
 dependencies {
+
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly rootProject.depsLibs.coreKtx
     compileOnly rootProject.depsLibs.appcompat
     compileOnly rootProject.depsLibs.material
     compileOnly rootProject.depsLibs.constraintlayout
 
-    compileOnly rootProject.depsLibs.refreshLayout
-    compileOnly rootProject.depsLibs.refreshHeader
-    compileOnly rootProject.depsLibs.refreshFooter
-
-    compileOnly rootProject.depsLibs.aroutreApi
-    kapt rootProject.depsLibs.arouterCompiler
-
     compileOnly project(path: ':lib_framework')
-    compileOnly project(path: ':lib_banner')
 }

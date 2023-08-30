@@ -1,6 +1,7 @@
 package com.myandy.network.api
 
 import com.myandy.common.model.ArticleList
+import com.myandy.common.model.Banner
 import com.myandy.common.model.CategoryItem
 import com.myandy.common.model.SystemList
 import com.myandy.network.response.BaseResponse
@@ -15,11 +16,11 @@ import retrofit2.http.Query
  * @desc   API接口类
  */
 interface ApiInterface {
-//    /**
-//     * 首页轮播图
-//     */
-//    @GET("/banner/json")
-//    suspend fun getHomeBanner(): BaseResponse<MutableList<Banner>>?
+    /**
+     * 首页轮播图
+     */
+    @GET("/banner/json")
+    suspend fun getHomeBanner(): BaseResponse<MutableList<Banner>>?
 
     /**
      * 首页资讯

@@ -75,4 +75,6 @@ dependencies {
     compileOnly project(path: ':lib_framework')
     compileOnly project(path: ':lib_common')
     compileOnly project(path: ':lib_network')
+    compileOnly project(path: ':lib_banner')
+    compileOnly project(path: ':lib_glide')
 }

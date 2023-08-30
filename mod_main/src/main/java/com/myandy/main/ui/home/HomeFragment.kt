@@ -1,26 +1,40 @@
 package com.myandy.main.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import com.myandy.main.R
+import com.myandy.framework.base.BaseMvvmFragment
+import com.myandy.framework.ext.gone
+import com.myandy.framework.ext.visible
+import com.myandy.main.databinding.FragmentHomeBinding
+import com.myandy.main.ui.home.viewmodel.HomeViewModel
+import com.scwang.smart.refresh.layout.api.RefreshLayout
+import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 
-/**
- * create an instance of this fragment.
- */
-class HomeFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class HomeFragment : BaseMvvmFragment<FragmentHomeBinding, HomeViewModel>(), OnRefreshListener {
+
+    override fun initView(view: View, savedInstanceState: Bundle?) {
+        mBinding?.refreshLayout?.apply {
+            autoRefresh()
+            setEnableRefresh(true)
+            setEnableLoadMore(false)
+            setOnRefreshListener(this@HomeFragment)
+        }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    override fun onRefresh(refreshLayout: RefreshLayout) {
+        refresh()
+    }
+
+    private fun refresh() {
+        mViewModel.getBannerList().observe(this) { banners ->
+            banners?.let {
+                mBinding?.bannerHome?.visible()
+                mBinding?.bannerHome?.setData(it)
+            } ?: kotlin.run {
+                mBinding?.bannerHome?.gone()
+            }
+            mBinding?.refreshLayout?.finishRefresh()
+        }
     }
 }
