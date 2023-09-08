@@ -30,10 +30,4 @@
     <string name="mine_compose">Compose</string>
     <string name="mine_mvc">MVC模式</string>
     <string name="mine_mvp">MVP模式</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment1">Hello blank fragment11111111111111111111111111111</string>
-    <string name="hello_blank_fragment2">Hello blank fragment222222222222222222222222222222</string>
-    <string name="hello_blank_fragment3">Hello blank fragment3333333333333333333333333333333</string>
-    <string name="hello_blank_fragment4">Hello blank fragment4444444444444444444444444444444</string>
-
 </resources>

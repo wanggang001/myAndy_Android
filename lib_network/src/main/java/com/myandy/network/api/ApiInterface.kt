@@ -3,6 +3,8 @@ package com.myandy.network.api
 import com.myandy.common.model.ArticleList
 import com.myandy.common.model.Banner
 import com.myandy.common.model.CategoryItem
+import com.myandy.common.model.ProjectSubList
+import com.myandy.common.model.ProjectTabItem
 import com.myandy.common.model.SystemList
 import com.myandy.network.response.BaseResponse
 import retrofit2.http.Field
@@ -33,22 +35,22 @@ interface ApiInterface {
         @Query("page_size") pageSize: Int
     ): BaseResponse<ArticleList>?
 
-//    /**
-//     * 首页项目
-//     */
-//    @GET("/project/tree/json")
-//    suspend fun getProjectTab(): BaseResponse<MutableList<ProjectTabItem>>?
-//
-//    /**
-//     * 项目二级列表
-//     * @param page  分页数量
-//     * @param cid    项目分类的id
-//     */
-//    @GET("/project/list/{page}/json")
-//    suspend fun getProjectList(
-//        @Path("page") page: Int,
-//        @Query("cid") cid: Int
-//    ): BaseResponse<ProjectSubList>?
+    /**
+     * 首页项目
+     */
+    @GET("/project/tree/json")
+    suspend fun getProjectTab(): BaseResponse<MutableList<ProjectTabItem>>?
+
+    /**
+     * 项目二级列表
+     * @param page  分页数量
+     * @param cid    项目分类的id
+     */
+    @GET("/project/list/{page}/json")
+    suspend fun getProjectList(
+        @Path("page") page: Int,
+        @Query("cid") cid: Int
+    ): BaseResponse<ProjectSubList>?
 
     /**
      * 分类列表
