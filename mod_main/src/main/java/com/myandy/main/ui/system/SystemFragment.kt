@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.myandy.framework.base.BaseMvvmFragment
 import com.myandy.framework.decoration.NormalItemDecoration
+import com.myandy.framework.ext.toJson
 import com.myandy.framework.ext.visible
 import com.myandy.framework.utils.dpToPx
 import com.myandy.main.R
@@ -17,7 +18,7 @@ import com.myandy.main.ui.system.viewmodel.SystemViewModel
 
 
 class SystemFragment : BaseMvvmFragment<FragmentSystemBinding, SystemViewModel>() {
-    lateinit var mAdapter: SystemAdapter
+    private lateinit var mAdapter: SystemAdapter
     override fun initView(view: View, savedInstanceState: Bundle?) {
         mAdapter = SystemAdapter()
         mBinding?.recyclerView?.apply {
@@ -33,6 +34,10 @@ class SystemFragment : BaseMvvmFragment<FragmentSystemBinding, SystemViewModel>(
                 )
                 setLastBottom(true)
             })
+        }
+        mAdapter.onItemClickListener = { view: View, position: Int ->
+            val item = mAdapter.getItem(position)
+            ArticleTabActivity.startIntent(requireContext(), item?.toJson(true))
         }
     }
 

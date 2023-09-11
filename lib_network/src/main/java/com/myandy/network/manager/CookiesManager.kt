@@ -42,13 +42,11 @@ object CookiesManager {
     fun encodeCookie(cookies: List<String>?): String {
         val sb = StringBuilder()
         val set = HashSet<String>()
-        cookies
-                ?.map { cookie ->
-                    cookie.split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-                }
-                ?.forEach {
-                    it.filterNot { set.contains(it) }.forEach { set.add(it) }
-                }
+        cookies?.map { cookie ->
+            cookie.split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        }?.forEach {
+            it.filterNot { set.contains(it) }.forEach { set.add(it) }
+        }
         LogUtil.e("cookiesList:$cookies", tag = "smy")
         val ite = set.iterator()
         while (ite.hasNext()) {

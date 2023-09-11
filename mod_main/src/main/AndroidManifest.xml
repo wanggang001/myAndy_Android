@@ -5,11 +5,21 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 检查网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 检查网络权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application android:allowBackup="false">
+        <activity
+            android:name=".ui.system.ArticleTabActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.ImagePreviewActivity"
             android:screenOrientation="portrait"

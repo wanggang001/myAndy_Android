@@ -11,6 +11,8 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.myandy.common.constant.KEY_INDEX
 import com.myandy.common.constant.MAIN_ACTIVITY_HOME
 import com.myandy.framework.base.BaseDataBindActivity
+import com.myandy.framework.toast.TipsToast
+import com.myandy.framework.utils.AppExit
 import com.myandy.framework.utils.StatusBarSettingHelper
 import com.myandy.main.databinding.ActivityMainBinding
 import com.myandy.main.navigator.SumFragmentNavigator
@@ -46,6 +48,13 @@ class MainActivity : BaseDataBindActivity<ActivityMainBinding>() {
 
         StatusBarSettingHelper.setStatusBarTranslucent(this)
         StatusBarSettingHelper.statusBarLightMode(this@MainActivity, true)
+    }
+
+    override fun onBackPressed() {
+        AppExit.onBackPressed(
+            this,
+            { TipsToast.showTips(getString(R.string.app_exit_one_more_press)) }
+        )
     }
 
 }
