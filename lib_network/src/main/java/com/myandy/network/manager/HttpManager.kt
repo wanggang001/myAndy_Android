@@ -8,12 +8,14 @@ import com.myandy.network.error.ERROR
 import com.myandy.network.error.NoNetWorkException
 import com.myandy.network.interceptor.CookiesInterceptor
 import com.myandy.network.interceptor.HeaderInterceptor
+import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.File
 import java.util.concurrent.TimeUnit
 
 /**
@@ -24,10 +26,10 @@ object HttpManager {
 
     init {
         mRetrofit = Retrofit.Builder()
-                .client(initOkHttpClient())
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
+            .client(initOkHttpClient())
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 
     /**
@@ -42,14 +44,18 @@ object HttpManager {
      */
     private fun initOkHttpClient(): OkHttpClient {
         val build = OkHttpClient.Builder()
-                .connectTimeout(12, TimeUnit.SECONDS)
-                .writeTimeout(12, TimeUnit.SECONDS)
-                .readTimeout(12, TimeUnit.SECONDS)
+            .connectTimeout(12, TimeUnit.SECONDS)
+            .writeTimeout(12, TimeUnit.SECONDS)
+            .readTimeout(12, TimeUnit.SECONDS)
         // 添加参数拦截器
+        //设置 请求的缓存的大小跟位置
+        val MAX_CACHE_SIZE: Long = 1024 * 1024 * 50 // 50M 的缓存大小
+        val cacheFile = File(AndyAppHelper.getApplication().cacheDir, "cache")
+        val cache = Cache(cacheFile, MAX_CACHE_SIZE)
         val interceptors = mutableListOf<Interceptor>()
         build.addInterceptor(CookiesInterceptor())
         build.addInterceptor(HeaderInterceptor())
-
+        build.cache(cache)
         //日志拦截器
         val logInterceptor = HttpLoggingInterceptor { message: String ->
             Log.i("okhttp", "data:$message")

@@ -9,8 +9,8 @@ ext {
     ]
 
     android = [
-            applicationId    : "com.com.myandtest",
-            //使用exoPlayer编译版本需要到33，而33中有bug,xml写代码没有代码提示
+            applicationId    : "com.myandytest",
+
             compileSdk       : 33,
             buildToolsVersion: '32.0.0',
             minSdk           : 21,
@@ -90,9 +90,6 @@ ext {
 
             //腾讯X5
 //            tbssdk            : "com.tencent.tbs:tbssdk:${dependVersion["tbssdkVersion"]}",
-
-            //ExoPlayer播放器
-            exoPlayer         : "com.google.android.exoplayer:exoplayer:${dependVersion["exoPlayerVersion"]}",
 
             //相机
 //            cameraX           : "androidx.camera:camera-camera2:${dependVersion["cameraxVersion"]}",

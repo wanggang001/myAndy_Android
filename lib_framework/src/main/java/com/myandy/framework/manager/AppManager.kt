@@ -213,7 +213,7 @@ object AppManager {
         var versionName = ""
         try {
             val pm = context.packageManager
-            val packageName = context.packageName ?: "com.sum.tea"
+            val packageName = context.packageName ?: "com.myandytest"
             pm.getPackageInfo(packageName, 0).versionName
             val pi = pm.getPackageInfo(packageName, 0)
             versionName = pi.versionName

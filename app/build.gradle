@@ -95,8 +95,6 @@ dependencies {
     implementation rootProject.depsLibs.aroutreApi
     kapt rootProject.depsLibs.arouterCompiler
 
-    implementation rootProject.depsLibs.exoPlayer
-
     implementation rootProject.depsLibs.rxPermission
     implementation rootProject.depsLibs.rxjava
     implementation rootProject.depsLibs.rxandroid
