@@ -68,6 +68,7 @@ dependencies {
     compileOnly rootProject.depsLibs.aroutreApi
     kapt rootProject.depsLibs.arouterCompiler
 
+    implementation rootProject.depsLibs.tbssdk
     compileOnly rootProject.depsLibs.rxPermission
     compileOnly rootProject.depsLibs.rxjava
     compileOnly rootProject.depsLibs.rxandroid

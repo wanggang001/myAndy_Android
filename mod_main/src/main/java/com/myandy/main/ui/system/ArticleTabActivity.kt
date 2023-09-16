@@ -11,8 +11,10 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.myandy.common.constant.KEY_DATA
 import com.myandy.common.model.SystemList
 import com.myandy.common.model.SystemSecondList
+import com.myandy.common.provider.SearchServiceProvider
 import com.myandy.framework.adapter.ViewPage2FragmentAdapter
 import com.myandy.framework.base.BaseDataBindActivity
+import com.myandy.framework.ext.onClick
 import com.myandy.framework.ext.toBeanOrNull
 import com.myandy.main.databinding.ActivityArticleBinding
 
@@ -35,10 +37,13 @@ class ArticleTabActivity : BaseDataBindActivity<ActivityArticleBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
         initTab()
+        mBinding.ivSearch.onClick {
+            SearchServiceProvider.toSearch(this)
+        }
     }
 
     override fun initData() {
-        val dataJson = intent.getStringExtra(KEY_DATA)
+        val dataJson = intent?.getStringExtra(KEY_DATA)
         val data = dataJson?.toBeanOrNull<SystemList>()
 
         mBinding.titleBar.setMiddleText(data?.name)

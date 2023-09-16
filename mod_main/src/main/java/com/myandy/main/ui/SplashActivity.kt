@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.alibaba.android.arouter.launcher.ARouter
 import com.myandy.common.constant.MAIN_ACTIVITY_HOME
+import com.myandy.common.provider.MainServiceProvider
 import com.myandy.framework.base.BaseDataBindActivity
 import com.myandy.framework.ext.countDownCoroutines
 import com.myandy.framework.ext.onClick
@@ -21,7 +22,8 @@ class SplashActivity : BaseDataBindActivity<ActivitySplashBinding>() {
             onTick = {
                 mBinding.tvSkip.text = getString(R.string.splash_time, it.plus(1).toString())
             }) {
-            ARouter.getInstance().build(MAIN_ACTIVITY_HOME).navigation()
+//            ARouter.getInstance().build(MAIN_ACTIVITY_HOME).navigation()
+            MainServiceProvider.toMain(this)
             finish()
         }
     }

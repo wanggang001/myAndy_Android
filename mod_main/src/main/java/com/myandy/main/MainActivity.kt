@@ -21,13 +21,13 @@ import com.myandy.main.navigator.SumFragmentNavigator
 class MainActivity : BaseDataBindActivity<ActivityMainBinding>() {
     private lateinit var navController: NavController
 
-//    companion object {
-//        fun start(context: Context, index: Int = 0) {
-//            val intent = Intent(context, MainActivity::class.java)
-//            intent.putExtra(KEY_INDEX, index)
-//            context.startActivity(intent)
-//        }
-//    }
+    companion object {
+        fun start(context: Context, index: Int = 0) {
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra(KEY_INDEX, index)
+            context.startActivity(intent)
+        }
+    }
 
     override fun initView(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)

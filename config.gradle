@@ -89,10 +89,10 @@ ext {
             arouterCompiler   : "com.alibaba:arouter-compiler:${dependVersion["arouterCompilerVersion"]}",
 
             //腾讯X5
-//            tbssdk            : "com.tencent.tbs:tbssdk:${dependVersion["tbssdkVersion"]}",
+            tbssdk            : "com.tencent.tbs:tbssdk:${dependVersion["tbssdkVersion"]}",
 
             //相机
-//            cameraX           : "androidx.camera:camera-camera2:${dependVersion["cameraxVersion"]}",
+            cameraX           : "androidx.camera:camera-camera2:${dependVersion["cameraxVersion"]}",
 
             //权限处理
             rxPermission      : "com.github.tbruyelle:rxpermissions:${dependVersion["permissionsVersion"]}",

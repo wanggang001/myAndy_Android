@@ -55,7 +55,7 @@ object HttpManager {
         val interceptors = mutableListOf<Interceptor>()
         build.addInterceptor(CookiesInterceptor())
         build.addInterceptor(HeaderInterceptor())
-        build.cache(cache)
+//        build.cache(cache)
         //日志拦截器
         val logInterceptor = HttpLoggingInterceptor { message: String ->
             Log.i("okhttp", "data:$message")

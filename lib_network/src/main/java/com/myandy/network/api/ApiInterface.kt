@@ -6,6 +6,7 @@ import com.myandy.common.model.CategoryItem
 import com.myandy.common.model.ProjectSubList
 import com.myandy.common.model.ProjectTabItem
 import com.myandy.common.model.SystemList
+import com.myandy.common.model.User
 import com.myandy.network.response.BaseResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -75,31 +76,31 @@ interface ApiInterface {
         @Query("cid") cid: Int
     ): BaseResponse<ArticleList?>?
 
-//    /**
-//     * 登录
-//     * @param username  用户名
-//     * @param password  密码
-//     */
-//    @FormUrlEncoded
-//    @POST("/user/login")
-//    suspend fun login(
-//        @Field("username") username: String,
-//        @Field("password") password: String,
-//    ): BaseResponse<User?>?
+    /**
+     * 登录
+     * @param username  用户名
+     * @param password  密码
+     */
+    @FormUrlEncoded
+    @POST("/user/login")
+    suspend fun login(
+        @Field("username") username: String,
+        @Field("password") password: String,
+    ): BaseResponse<User?>?
 
-//    /**
-//     * 注册
-//     * @param username  用户名
-//     * @param password  密码
-//     * @param repassword  确认密码
-//     */
-//    @FormUrlEncoded
-//    @POST("/user/register")
-//    suspend fun register(
-//        @Field("username") username: String,
-//        @Field("password") password: String,
-//        @Field("repassword") repassword: String
-//    ): BaseResponse<User?>?
+    /**
+     * 注册
+     * @param username  用户名
+     * @param password  密码
+     * @param repassword  确认密码
+     */
+    @FormUrlEncoded
+    @POST("/user/register")
+    suspend fun register(
+        @Field("username") username: String,
+        @Field("password") password: String,
+        @Field("repassword") repassword: String
+    ): BaseResponse<User?>?
 
     /**
      * 登出

@@ -5,6 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.myandy.common.constant.KEY_LIST
 import com.myandy.common.model.CategorySecondItem
+import com.myandy.common.provider.MainServiceProvider
 import com.myandy.framework.base.BaseMvvmFragment
 import com.myandy.framework.ext.dividerGridSpace
 import com.myandy.framework.ext.gone
@@ -34,6 +35,16 @@ class CategorySecondFragment :
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = mAdapter
             dividerGridSpace(2, 8.0f, true)
+        }
+        mAdapter.onItemClickListener = { _: View, position: Int ->
+            val item = mAdapter.getItem(position)
+            if (item != null && !item.link.isNullOrEmpty()) {
+                MainServiceProvider.toArticleDetail(
+                    context = requireContext(),
+                    url = item.link!!,
+                    title = item.title ?: ""
+                )
+            }
         }
     }
 

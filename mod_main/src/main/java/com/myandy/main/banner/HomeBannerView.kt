@@ -3,9 +3,11 @@ package com.myandy.main.banner
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
+import android.view.View
 import com.myandy.banner.BannerViewPager
 import com.myandy.common.holder.BannerImageHolder
 import com.myandy.common.model.Banner
+import com.myandy.common.provider.MainServiceProvider
 import com.myandy.framework.utils.dpToPx
 
 /**
@@ -43,18 +45,18 @@ class HomeBannerView @JvmOverloads constructor(
                 .setIndicatorSliderColor(Color.parseColor("#8F8E94"), Color.parseColor("#0165b8"))
                 .create() // 创建
 
-//        mAdapter.setPageClickListener(object : OnPageClickListener {
-//            override fun onPageClick(clickedView: View?, position: Int) {
-//                   val item = mAdapter.getData()[position]
-//                if (!item.url.isNullOrEmpty()) {
-//                    MainServiceProvider.toArticleDetail(
-//                        context = context,
-//                        url = item.url!!,
-//                        title = item.title ?: ""
-//                    )
-//                }
-//            }
-//        })
+        mAdapter.setPageClickListener(object : OnPageClickListener {
+            override fun onPageClick(clickedView: View?, position: Int) {
+                   val item = mAdapter.getData()[position]
+                if (!item.url.isNullOrEmpty()) {
+                    MainServiceProvider.toArticleDetail(
+                        context = context,
+                        url = item.url!!,
+                        title = item.title ?: ""
+                    )
+                }
+            }
+        })
     }
 
     /**

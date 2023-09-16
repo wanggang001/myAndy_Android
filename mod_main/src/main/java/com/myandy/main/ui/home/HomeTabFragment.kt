@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.myandy.common.constant.KEY_ID
+import com.myandy.common.provider.MainServiceProvider
 import com.myandy.framework.base.BaseMvvmFragment
 import com.myandy.framework.decoration.StaggeredItemDecoration
 import com.myandy.framework.ext.gone
@@ -55,13 +56,13 @@ class HomeTabFragment : BaseMvvmFragment<FragmentHomeTabBinding, HomeViewModel>(
         }
         mAdapter.onItemClickListener = { view, position ->
             val item = mAdapter.getItem(position)
-//            if (item != null && !item.link.isNullOrEmpty()) {
-//                MainServiceProvider.toArticleDetail(
-//                    context = requireContext(),
-//                    url = item.link!!,
-//                    title = item.title ?: ""
-//                )
-//            }
+            if (item != null && !item.link.isNullOrEmpty()) {
+                MainServiceProvider.toArticleDetail(
+                    context = requireContext(),
+                    url = item.link!!,
+                    title = item.title ?: ""
+                )
+            }
         }
     }
 

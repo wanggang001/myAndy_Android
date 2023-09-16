@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.myandy.common.constant.KEY_ID
+import com.myandy.common.provider.LoginServiceProvider
+import com.myandy.common.provider.MainServiceProvider
 import com.myandy.framework.base.BaseMvvmFragment
 import com.myandy.framework.decoration.NormalItemDecoration
 import com.myandy.framework.ext.gone
@@ -55,19 +57,19 @@ class ArticleListFragment : BaseMvvmFragment<FragmentArticleListBinding, Article
         mAdapter.onItemClickListener = { _: View, position: Int ->
             val item = mAdapter.getItem(position)
             if (item != null && !item.link.isNullOrEmpty()) {
-//                MainServiceProvider.toArticleDetail(
-//                    context = requireContext(),
-//                    url = item.link!!,
-//                    title = item.title ?: ""
-//                )
+                MainServiceProvider.toArticleDetail(
+                    context = requireContext(),
+                    url = item.link!!,
+                    title = item.title ?: ""
+                )
             }
         }
         mAdapter.onItemCollectListener = { _: View, position: Int ->
-//            if (LoginServiceProvider.isLogin()) {
-//                setCollectView(position)
-//            } else {
-//                LoginServiceProvider.login(requireContext())
-//            }
+            if (LoginServiceProvider.isLogin()) {
+                setCollectView(position)
+            } else {
+                LoginServiceProvider.login(requireContext())
+            }
         }
     }
 
@@ -127,7 +129,7 @@ class ArticleListFragment : BaseMvvmFragment<FragmentArticleListBinding, Article
                 }
 
                 if (it == ERROR.UNLOGIN.code) {
-//                    LoginServiceProvider.login(requireContext())
+                    LoginServiceProvider.login(requireContext())
                 }
             }
         }

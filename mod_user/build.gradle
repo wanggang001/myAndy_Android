@@ -69,6 +69,7 @@ dependencies {
     compileOnly rootProject.depsLibs.rxandroid
 
     compileOnly project(path: ':lib_framework')
-    compileOnly project(path: ':lib_common')
+    implementation project(path: ':lib_common')
     compileOnly project(path: ':lib_network')
+    compileOnly project(path: ':lib_glide')
 }
