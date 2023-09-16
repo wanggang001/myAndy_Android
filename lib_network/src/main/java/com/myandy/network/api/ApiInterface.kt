@@ -3,6 +3,7 @@ package com.myandy.network.api
 import com.myandy.common.model.ArticleList
 import com.myandy.common.model.Banner
 import com.myandy.common.model.CategoryItem
+import com.myandy.common.model.HotSearch
 import com.myandy.common.model.ProjectSubList
 import com.myandy.common.model.ProjectTabItem
 import com.myandy.common.model.SystemList
@@ -179,6 +180,6 @@ interface ApiInterface {
     /**
      * 搜索热词
      */
-//    @GET("hotkey/json")
-//    suspend fun getHotSearchData(): BaseResponse<MutableList<HotSearch>>
+    @GET("hotkey/json")
+    suspend fun getHotSearchData(): BaseResponse<MutableList<HotSearch>>
 }

@@ -39,12 +39,10 @@ const val USER_ACTIVITY_COLLECTION = "/user/activity/collection"
  * 搜索模块-搜索页面
  */
 const val SEARCH_ACTIVITY_SEARCH = "/search/activity/search"
-
 /**
- * 视频模块
+ * 搜索模块模块-搜索
  */
-const val VIDEO_ACTIVITY_PLAYER = "/video/activity/player"
-
+const val SEARCH_SERVICE_SEARCH = "/search/service/search"
 /**
  * Demo模块
  */
@@ -73,8 +71,3 @@ const val USER_SERVICE_USER = "/user/service/user"
  * 主页模块-主页
  */
 const val MAIN_SERVICE_HOME = "/main/service/home"
-
-/**
- * 搜索模块模块-搜索
- */
-const val SEARCH_SERVICE_SEARCH = "/search/service/search"

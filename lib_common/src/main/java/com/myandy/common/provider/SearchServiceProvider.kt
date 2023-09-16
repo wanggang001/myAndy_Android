@@ -3,6 +3,7 @@ package com.myandy.common.provider
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.launcher.ARouter
+import com.myandy.common.constant.SEARCH_SERVICE_SEARCH
 import com.myandy.common.service.ISearchService
 
 /**
@@ -10,7 +11,7 @@ import com.myandy.common.service.ISearchService
  * 任意模块就能通过SearchServiceProvider使用对外暴露的能力
  */
 object SearchServiceProvider {
-    @Autowired(name = "/search/service/search22")
+    @Autowired(name = SEARCH_SERVICE_SEARCH)
     lateinit var searchService: ISearchService
 
     init {

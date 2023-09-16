@@ -12,9 +12,11 @@ import androidx.viewpager2.widget.ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.myandy.common.model.ProjectTabItem
+import com.myandy.common.provider.SearchServiceProvider
 import com.myandy.framework.adapter.ViewPage2FragmentAdapter
 import com.myandy.framework.base.BaseMvvmFragment
 import com.myandy.framework.ext.gone
+import com.myandy.framework.ext.onClick
 import com.myandy.framework.ext.visible
 import com.myandy.main.R
 import com.myandy.main.databinding.FragmentHomeBinding
@@ -37,6 +39,9 @@ class HomeFragment : BaseMvvmFragment<FragmentHomeBinding, HomeViewModel>(), OnR
             setEnableRefresh(true)
             setEnableLoadMore(false)
             setOnRefreshListener(this@HomeFragment)
+        }
+        mBinding?.ivSearch?.onClick {
+            SearchServiceProvider.toSearch(requireContext())
         }
         initTab()
     }
